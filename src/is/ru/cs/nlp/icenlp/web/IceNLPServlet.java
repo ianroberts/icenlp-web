@@ -135,7 +135,7 @@ public class IceNLPServlet extends HttpServlet
 		out.write(",\"features\":{");
                 //out.write("<span title=" + "\"" + tag.annotation(english) + "\"" + ">" + tag + "</span>");
                 out.write("\"annotation\":\"" + tag.annotation(english)+"\"");
-                out.write(",\"tag\":\"" + tag +"\"");
+                //out.write(",\"tag\":\"" + tag +"\"");
 		/*
                 //if(showLemma)
                     //out.write(", \"lemmald\":\"" + this.lemmald.lemmatize(tok.lexeme,tok.getFirstTagStr()).getLemma()+"");
@@ -258,7 +258,6 @@ public class IceNLPServlet extends HttpServlet
         	//showErrors = (json_request.getString("showerrors").equals("true"));
         if(json_request.has("agreement")) 
         	featureAgreement = (json_request.getString("agreement").equals("true"));
-
 
         // Selection of tokenization.
         if(json_request.has("showTokenize")) 
