@@ -301,7 +301,7 @@ public class IceNLPServlet extends HttpServlet
            tokenize(query, out, english, useStricktToken, inputTokenizeType);
         // else do both tagging and parsing
         else {
-
+/*
             // Tag
             long tagStart = System.currentTimeMillis();
             //itf.useTriTagger(useHybrid);
@@ -317,10 +317,15 @@ public class IceNLPServlet extends HttpServlet
             else
                 outType = OutputFormatter.OutputType.plain;
 
-            String parsed = ipf.parse( sents.toString(), outType, functions, featureAgreement, showErrors, mergeLabels );
-            long parseEnd = System.currentTimeMillis();
+	    //*/
 
-            writeTaggedText(sents, out, sentLine, markUnknown, english, showLemma);
+            //String parsed = ipf.parse( sents.toString(), outType, functions, featureAgreement, showErrors, mergeLabels );
+            String parsed = ipf.parse( query, outType, functions, featureAgreement, showErrors, mergeLabels );
+            //long parseEnd = System.currentTimeMillis();
+            out.write(",\"texts\":[");
+            out.write("{\"content\":\""+parsed+"\"}");
+	    out.write("]");
+            //writeTaggedText(sents, out, sentLine, markUnknown, english, showLemma);
 
 	    //out.write(",\"parsed\":\"" + parsed.replaceAll( "\n", "|")+"\"");
 

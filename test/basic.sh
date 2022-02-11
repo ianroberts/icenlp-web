@@ -5,14 +5,9 @@
 #LOC=/process/service
 LOC=/IceNLPWeb/process
 
-curl http://0.0.0.0:8080$LOC -H 'Content-Type: application/json' -d '{"type":"text", "content":"hæ"}'
+curl http://0.0.0.0:8080$LOC -H 'Content-Type: application/json' -d '{"type":"text", "content":"Gamli lkenvf maðurinn nkeng borðar sfg3en kalda lveosf súpu nveo með aþ mjög aa góðri lveþsf lyst nveþ . ."}'
 echo
 
-curl http://0.0.0.0:8080$LOC -H 'Content-Type: application/json' -d '{"type":"text", "content":"hæ, hvað seigir þú gott. Nei."}'
-echo
-
-curl http://0.0.0.0:8080$LOC -H 'Content-Type: application/json' -d '{"type":"text", "content":"Gamli maðurinn borðar kalda súpu með mjög góðri lyst."}'
-echo
 
 echo "### Error ###"
 TEST='{}'
